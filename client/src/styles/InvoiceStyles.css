@@ -50,14 +50,14 @@ p {
     height: 60px;
     width: 60px;
     border-radius: 20%;
-    background: url() no-repeat;
+    
     background-size: 50px 50px;
 }
 .clientlogo{
     float: left;
     height: 60px;
     width: 60px;
-    background: url()no-repeat;
+    /* background: url()no-repeat; */
     background-size: 60px 60px;
     border-radius: 50px;
 }
