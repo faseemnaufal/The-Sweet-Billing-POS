@@ -32,7 +32,7 @@ const BillsPage = () => {
     }
     useEffect(() => {
       
-      getAllBills()
+    //   getAllBills()
     },[])
 
     //print function

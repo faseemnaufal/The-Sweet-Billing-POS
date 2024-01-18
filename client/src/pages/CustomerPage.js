@@ -26,7 +26,7 @@ const CustomerPage = () => {
 
 useEffect(() => {
       
-  getAllBills()
+  // getAllBills()
 },[])
 
  //table data
