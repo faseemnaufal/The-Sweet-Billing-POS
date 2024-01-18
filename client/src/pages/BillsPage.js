@@ -6,6 +6,7 @@ import axios from 'axios'
 import {  Button, Modal, Table} from 'antd'
 import { useReactToPrint } from 'react-to-print'
 import "../styles/InvoiceStyles.css";
+import { API_URL } from '../assets/API_URL';
 
 const BillsPage = () => {
 
@@ -20,7 +21,7 @@ const BillsPage = () => {
           dispatch({
               type:'SHOW_LOADING'
           })
-          const {data} = await axios.get('/api/bills/get-bills')
+          const {data} = await axios.get(`${API_URL}api/bills/get-bills`)
           setBillsData(data)
           dispatch({
               type: "HIDE_LOADING"
@@ -32,7 +33,7 @@ const BillsPage = () => {
     }
     useEffect(() => {
       
-    //   getAllBills()
+      getAllBills()
     },[])
 
     //print function

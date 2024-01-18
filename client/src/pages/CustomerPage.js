@@ -3,6 +3,7 @@ import DefaultLayout from '../components/DefaultLayout'
 import { useDispatch } from 'react-redux'
 import axios from 'axios'
 import { Table } from 'antd'
+import { API_URL } from '../assets/API_URL';
 
 const CustomerPage = () => {
   const [billsData,setBillsData] = useState([])
@@ -13,7 +14,7 @@ const CustomerPage = () => {
         dispatch({
             type:'SHOW_LOADING'
         })
-        const {data} = await axios.get('/api/bills/get-bills')
+        const {data} = await axios.get(`${API_URL}api/bills/get-bills`)
         setBillsData(data)
         dispatch({
             type: "HIDE_LOADING"
@@ -26,7 +27,7 @@ const CustomerPage = () => {
 
 useEffect(() => {
       
-  // getAllBills()
+   getAllBills()
 },[])
 
  //table data

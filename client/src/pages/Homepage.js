@@ -4,6 +4,7 @@ import axios from 'axios'
 import { Button, Col, Input, Row } from 'antd';
 import { useDispatch } from 'react-redux';
 import ItemList from '../components/ItemList';
+import { API_URL } from '../assets/API_URL';
 
 const Homepage = () => {
     const [itemData,setItemData] = useState([])
@@ -32,7 +33,7 @@ const Homepage = () => {
                 dispatch({
                     type:'SHOW_LOADING'
                 })
-                const {data} = await axios.get('/api/items/get-item')
+                const {data} = await axios.get(`${API_URL}api/items/get-item`)
                 setItemData(data)
                 dispatch({
                     type: "HIDE_LOADING"

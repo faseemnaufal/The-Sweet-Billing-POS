@@ -5,6 +5,7 @@ import {DeleteOutlined,PlusCircleOutlined,MinusCircleOutlined} from '@ant-design
 import { Button, Form, Input, Modal, Select, Table, message } from 'antd'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { API_URL } from '../assets/API_URL';
 
 const CartPage = () => {
     const [subTotal, setSubTotal] = useState(0)
@@ -79,7 +80,7 @@ const CartPage = () => {
                 userId: JSON.parse(localStorage.getItem("auth"))._id,
             }
             //console.log(newObject)
-            await axios.post('/api/bills/add-bills', newObject)
+            await axios.post(`${API_URL}api/bills/add-bills`, newObject)
             message.success("Bill Generated")
             navigate('/bills')
         }catch (error){

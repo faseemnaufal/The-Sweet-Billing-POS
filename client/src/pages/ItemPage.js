@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import {DeleteOutlined,EditOutlined} from '@ant-design/icons'
 import axios from 'axios'
 import { Button, Form, Input, Modal, Select, Table, message } from 'antd'
+import { API_URL } from '../assets/API_URL';
 
 const ItemPage = () => {
   const dispatch = useDispatch()
@@ -16,7 +17,7 @@ const ItemPage = () => {
         dispatch({
             type:'SHOW_LOADING'
         })
-        const {data} = await axios.get('/api/items/get-item')
+        const {data} = await axios.get(`${API_URL}api/items/get-item`)
         setItemData(data)
         dispatch({
             type: "HIDE_LOADING"
@@ -28,7 +29,7 @@ const ItemPage = () => {
   }
   useEffect(() => {
     
-    // getAllItems()
+     getAllItems()
   },[])
 
   //handle delete
@@ -37,7 +38,7 @@ const ItemPage = () => {
       dispatch({
           type:'SHOW_LOADING'
       })
-      await axios.post('/api/items/delete-item', {itemId:record._id})
+      await axios.post(`${API_URL}api/items/delete-item`, {itemId:record._id})
       message.success('Item Deleted Successfully')
       getAllItems()
       setPopupModal(false)
@@ -82,7 +83,7 @@ const ItemPage = () => {
         dispatch({
             type:'SHOW_LOADING'
         })
-        await axios.post('/api/items/add-item', value)
+        await axios.post(`${API_URL}api/items/add-item`, value)
         message.success('Item Added Successfully')
         getAllItems()
         setPopupModal(false)
@@ -99,7 +100,7 @@ const ItemPage = () => {
         dispatch({
             type:'SHOW_LOADING'
         })
-        await axios.put('/api/items/edit-item', {...value, itemId:editItem._id})
+        await axios.put(`${API_URL}api/items/edit-item`, {...value, itemId:editItem._id})
         message.success('Item Updated Successfully')
         getAllItems()
         setPopupModal(false)

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { message } from 'antd'
 import axios from 'axios'
 import {useDispatch} from 'react-redux'
+import { API_URL } from '../assets/API_URL';
 
 const Login = () => {
     
@@ -16,7 +17,7 @@ const Login = () => {
           type: 'SHOW_LOADING',
         });
     
-        const res = await axios.post('/api/users/login', value);
+        const res = await axios.post(`${API_URL}api/users/login`, value);
     
         dispatch({ type: 'HIDE_LOADING' });
     
