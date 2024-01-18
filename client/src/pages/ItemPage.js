@@ -26,10 +26,10 @@ const ItemPage = () => {
         console.log(error)
     }
   }
-  // useEffect(() => {
+  useEffect(() => {
     
-  //   getAllItems()
-  // },[])
+    // getAllItems()
+  },[])
 
   //handle delete
   const handleDelete = async(record) =>{
