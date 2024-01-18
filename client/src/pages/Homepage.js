@@ -24,6 +24,7 @@ const Homepage = () => {
     //     },
     // ]
     const dispatch = useDispatch()
+   // axios.defaults.baseURL = process.env.PORT;
 
     useEffect(() => {
         const getAllItems = async () =>{
