@@ -26,10 +26,10 @@ const ItemPage = () => {
         console.log(error)
     }
   }
-  useEffect(() => {
+  // useEffect(() => {
     
-    getAllItems()
-  },[])
+  //   getAllItems()
+  // },[])
 
   //handle delete
   const handleDelete = async(record) =>{
@@ -82,7 +82,7 @@ const ItemPage = () => {
         dispatch({
             type:'SHOW_LOADING'
         })
-        const res = await axios.post('/api/items/add-item', value)
+        await axios.post('/api/items/add-item', value)
         message.success('Item Added Successfully')
         getAllItems()
         setPopupModal(false)

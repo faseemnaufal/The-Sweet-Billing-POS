@@ -30,10 +30,10 @@ const BillsPage = () => {
           console.log(error)
       }
     }
-    useEffect(() => {
+    // useEffect(() => {
       
-      getAllBills()
-    },[])
+    //   getAllBills()
+    // },[])
 
     //print function
     const handlePrint = useReactToPrint({

@@ -24,10 +24,10 @@ const CustomerPage = () => {
     }
   }
 
-useEffect(() => {
+// useEffect(() => {
       
-  getAllBills()
-},[])
+//   getAllBills()
+// },[])
 
  //table data
  const columns = [
